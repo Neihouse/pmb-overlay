@@ -137,3 +137,10 @@ cython_debug/
 # Conda environments
 # Ignore conda environment directories
 conda-env/
+# Google Cloud Platform ignore files
+# Ignore GCP service account keys and local configuration files
+*.json
+gcloud/
+# Ignore specific GCP credential files
+# Replace 'your-credentials-file.json' with the actual names of your GCP credentials files if known
+#your-credentials-file.json
