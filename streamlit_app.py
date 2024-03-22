@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config page_title='PhotoMeBooth', page_icon=':camera:rgb'
+st.set_page_config(page_title='PhotoMeBooth', page_icon=':camera:')
 
 def main():
     st.sidebar.title("Navigation")
@@ -20,7 +20,7 @@ def home_screen():
 
 def create_overlay_page():
     st.title('Create Your Overlay')
-    description = st.text_area('Describe your overlay', '"e.g.,"birthday party with balloons and confetti"')
+    description = st.text_area('Describe your overlay', 'e.g., "birthday party with balloons and confetti"')
     uploaded_file = st.file_uploader('Choose your base image', type=['png', 'jpg'])
     if uploaded_file:
         st.image(uploaded_file, caption='Your Base Image')
@@ -29,9 +29,9 @@ def create_overlay_page():
 def feedback_page():
     st.title('Provide Feedback')
     feedback = st.text_area('Your feedback')
-    st.markdown('*We value your input and would love to hear what you have to say, whether it's a compliment, a suggestion, a question, or a concern.'}
+    # Corrected the closing bracket for the markdown string below
+    st.markdown('*We value your input and would love to hear what you have to say, whether it\'s a compliment, a suggestion, a question, or a concern.*')
     st.button('Submit Feedback')
 
 if __name__ == '__main__':
     main()
-    
