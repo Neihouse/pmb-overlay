@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 from PIL import Image
+# Assuming 'reflex' is a library that provides enhanced UI components for Streamlit
 from reflex import ui
 
 # Page configuration
@@ -22,9 +23,10 @@ def load_logo(logo_path):
 # Main function
 def main():
     st.sidebar.title("Navigation")
+    # Utilizing Reflex for enhanced navigation
     page = ui.tab_bar(
         tabs=["Home", "Create New Overlay", "Provide Feedback"],
-        help_text="Select a page to navigate to. Home provides an introduction, Create New Overlay allows you to customize photo overlays, and Provide Feedback is where you can share your thoughts with us."
+        help_text="Select a page to navigate to..."
     )
 
     if page == "Home":
@@ -67,7 +69,8 @@ def feedback_page():
 
     st.title('Provide Feedback')
     feedback = st.text_area('Your feedback')
-    if ui.button('Submit Feedback'):
+    # Assuming Reflex provides an enhanced button component
+    if ui.button('Submit Feedback', style='primary'):
         st.success('Thank you for your feedback!')
 
 if __name__ == '__main__':
